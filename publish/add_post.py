@@ -3,11 +3,13 @@
 使い方:
   python publish/add_post.py reel 001 "2026-10-14 12:30"
   python publish/add_post.py carousel 008 "2026-10-19 21:00"
+  python publish/add_post.py threads 002 "2026-10-13 21:30"
 
 ・カルーセルの画像は output/<id>/01〜05.png を JPEG に変換して docs/media/<id>/ に置く
   （インスタのAPIはJPEGしか受け付けないため）
 ・リールは reels/<id>.mp4 を docs/media/reels/ にコピーする
 ・本文は posts/carousel_<id>.json の caption と hashtags を使う
+・Threadsは posts/carousel_<id>.json の threads_text をそのまま投稿する（画像・動画なし）
 """
 import json
 import shutil
@@ -23,11 +25,16 @@ SCHEDULE = ROOT / "publish" / "schedule.json"
 
 def main(kind, pid, when):
     spec = json.loads((ROOT / "posts" / f"carousel_{pid}.json").read_text(encoding="utf-8"))
-    caption = spec["caption"] + "\n\n" + spec["hashtags"]
     at = when.replace(" ", "T")
-    item = {"key": f"{kind}-{pid}", "type": kind, "at": at, "caption": caption}
+    item = {"key": f"{kind}-{pid}", "type": kind, "at": at}
+    if kind != "threads":
+        item["caption"] = spec["caption"] + "\n\n" + spec["hashtags"]
 
-    if kind == "reel":
+    if kind == "threads":
+        if not spec.get("threads_text"):
+            sys.exit(f"posts/carousel_{pid}.json に threads_text がありません")
+        item["text"] = spec["threads_text"]
+    elif kind == "reel":
         src = ROOT / "reels" / f"{pid}.mp4"
         dst = MEDIA / "reels" / f"{pid}.mp4"
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -44,7 +51,7 @@ def main(kind, pid, when):
             sys.exit(f"output/{pid} に画像がありません")
         item["images"] = imgs
     else:
-        sys.exit("種類は reel か carousel を指定してください")
+        sys.exit("種類は reel / carousel / threads のどれかを指定してください")
 
     (ROOT / "docs" / ".nojekyll").touch()
     schedule = json.loads(SCHEDULE.read_text(encoding="utf-8")) if SCHEDULE.exists() else []
