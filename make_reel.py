@@ -6,7 +6,7 @@
   python make_reel.py --dry                   （声なしの試し作成。料金はかからない）
 
 出力:
-  reels/<id>.mp4          … 完成したリール（BGMなし。音楽は予約時にインスタで追加）
+  reels/<id>.mp4          … 完成したリール（BGM/ の mp3 をナレーションの下で流す）
   reels/<id>_script.txt   … 読み上げた原稿（確認用）
 
 ナレーションはOpenAIの音声API（gpt-4o-mini-tts）で作る。
@@ -44,6 +44,10 @@ SAMPLE_RATE = 24000   # OpenAIの pcm 出力（24kHz・16bit・モノラル）
 
 OUT = Path("reels")
 KEY_FILE = Path("secrets/openai_key.txt")
+BGM_DIR = Path("BGM")   # ここの mp3（名前順で最初の1曲）をナレーションの下で流す。なければBGMなし
+BGM_VOLUME = 0.33
+BGM_FADE_IN = 1.0
+BGM_FADE_OUT = 2.0
 READINGS_FILE = Path("readings.json")
 
 
@@ -189,6 +193,9 @@ def build_video(images, audios, secs, out_path, tempo):
         cmd += ["-i", str(p)]
     for p in audios:
         cmd += ["-i", str(p)]
+    bgm = next(iter(sorted(BGM_DIR.glob("*.mp3"))), None)
+    if bgm:
+        cmd += ["-stream_loop", "-1", "-i", str(bgm)]    # 動画より短ければ繰り返す
 
     f = []
     for i, L in enumerate(lens):
@@ -203,14 +210,22 @@ def build_video(images, audios, secs, out_path, tempo):
         prev = f"x{i}"
     for i, d in enumerate(durs):
         f.append(f"[{n + i}:a]atempo={tempo},apad=whole_dur={d:.3f}[a{i}]")
-    f.append("".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1[aout]")
+    total = sum(durs)
+    voice_out = "voice" if bgm else "aout"
+    f.append("".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1[{voice_out}]")
+    if bgm:
+        f.append(f"[{2 * n}:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,volume={BGM_VOLUME},"
+                 f"afade=t=in:d={BGM_FADE_IN},afade=t=out:st={total - BGM_FADE_OUT:.3f}:d={BGM_FADE_OUT},"
+                 f"aformat=sample_rates=48000:channel_layouts=stereo[bgm]")
+        f.append("[voice]aformat=sample_rates=48000:channel_layouts=stereo[voice2]")
+        f.append("[voice2][bgm]amix=inputs=2:duration=first:normalize=0[aout]")
 
     cmd += ["-filter_complex", ";".join(f), "-map", f"[{prev}]", "-map", "[aout]",
             "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", str(FPS),
             "-pix_fmt", "yuv420p", "-profile:v", "high", "-level", "4.1",
             "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "192k", "-movflags", "+faststart", "-shortest", str(out_path)]
     subprocess.run(cmd, check=True)
-    return sum(durs)
+    return total
 
 
 def main(path, dry):
