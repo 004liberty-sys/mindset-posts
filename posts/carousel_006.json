@@ -1,0 +1,50 @@
+{
+  "id": "006",
+  "person": "スティーブ・ジョブズ",
+  "theme": "失敗からの再起",
+  "sources": [
+    "https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says"
+  ],
+  "backgrounds": {
+    "a": "an empty 1980s office at night, a beige vintage computer glowing on a desk, rain on the window, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "a man in a dark sweater seen from behind walking alone across an empty parking lot at dusk, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "c": "a university campus lawn in morning light, empty chairs set up for a ceremony, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a person seen from behind standing at floor-to-ceiling windows of a bright modern office as the sun rises over the city, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "仕事で失敗した日に、\n読んでほしい。",
+      "sub": "自分の会社をクビになった男の話。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "30歳。\n自分がつくった会社を\n追い出された。",
+      "sub": "その会社の名前は、Apple。",
+      "bg": "b"
+    },
+    {
+      "type": "story",
+      "main": "それでも、\n仕事への愛は消えなかった。",
+      "sub": "NeXTとPixarを立ち上げ、\nのちにAppleへ戻った。",
+      "bg": "a"
+    },
+    {
+      "type": "quote",
+      "main": "Stay hungry.\nStay foolish.",
+      "sub": "ハングリーであれ。愚かであれ。\n― スティーブ・ジョブズ（2005年 スタンフォード大学）",
+      "bg": "c"
+    },
+    {
+      "type": "finale",
+      "main": "最悪の出来事が、\n最高の始まりに\nなることがある。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "失敗した日は、終わりの日じゃない。\n\nスティーブ・ジョブズは30歳で、自分が立ち上げたAppleを追い出された。\nそれでも仕事を愛する気持ちは消えず、NeXTとPixarを立ち上げ、のちにAppleへ戻った。\n\n2005年のスタンフォード大学のスピーチで、彼はこの出来事を人生で最良のことだったと振り返っている。\n\n今の失敗も、数年後に「あれがあってよかった」と言える日が来る。\n保存して、落ち込んだ日に読み返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #スティーブジョブズ #失敗から学ぶ",
+  "threads_text": "30歳で、自分がつくった会社を追い出された男がいた。スティーブ・ジョブズ。\nそれでも仕事への愛は消えず、NeXTとPixarを立ち上げ、Appleへ戻った。\n\n最悪の出来事が、最高の始まりになることがある。"
+}

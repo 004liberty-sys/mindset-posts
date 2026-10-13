@@ -1,0 +1,50 @@
+{
+  "id": "007",
+  "person": "野村克也",
+  "theme": "負けから学ぶ",
+  "sources": [
+    "https://number.bunshun.jp/articles/-/856348"
+  ],
+  "backgrounds": {
+    "a": "an empty baseball dugout after a lost game, scattered equipment, stadium lights dimming, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "an old Japanese samurai-era scroll and a wooden practice sword on a tatami floor, candle light, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "c": "a notebook with handwritten notes and a pencil on a desk under a lamp at night, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a baseball player seen from behind walking onto a sunlit green field on a clear morning, bright blue sky, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "実はこの名言、\n元ネタがある。",
+      "sub": "名将・野村克也の、あの言葉。",
+      "bg": "a"
+    },
+    {
+      "type": "quote",
+      "main": "「勝ちに不思議の勝ちあり\n負けに不思議の負けなし」",
+      "sub": "野村克也さんの言葉として有名な一節。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "元は、江戸時代の大名で\n剣の達人・松浦静山の言葉。",
+      "sub": "野村さんは、偉人の言葉や故事を\nよく借りて語っていた。",
+      "bg": "b"
+    },
+    {
+      "type": "story",
+      "main": "勝ちには、運が混ざる。\nでも負けには、\n必ず理由がある。",
+      "sub": "だからこそ、負けた日こそ\n振り返る価値がある。",
+      "bg": "c"
+    },
+    {
+      "type": "finale",
+      "main": "負けは、\n次に勝つための答えが\n詰まった教科書だ。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "負けた日は、いちばん学べる日。\n\n「勝ちに不思議の勝ちあり、負けに不思議の負けなし」\n野村克也さんの言葉として有名ですが、元は江戸時代の大名・松浦静山の言葉です。\n\n勝ちには偶然が混ざる。でも負けには、必ず理由がある。\nうまくいかなかった日こそ、ノートに「なぜ？」を1つ書いてみよう。\n\n知らなかった人は、保存して誰かに教えてあげてほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #野村克也 #名言の元ネタ",
+  "threads_text": "「勝ちに不思議の勝ちあり、負けに不思議の負けなし」\n野村克也さんの名言として有名だけど、実は元ネタは江戸時代の大名・松浦静山の言葉。\n\n負けには必ず理由がある。だから負けた日こそ、いちばん学べる。"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "004",
+  "person": "イチロー",
+  "theme": "自分の物差し",
+  "sources": [
+    "https://www.daily.co.jp/mlb/2019/03/23/0012172791.shtml"
+  ],
+  "backgrounds": {
+    "a": "an empty baseball stadium at night under bright floodlights, seen from the outfield, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "a baseball bat leaning against a dugout wall, a worn glove on a bench, quiet night, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "c": "a lone runner from behind on an early morning road, mist, sunrise ahead, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a runner seen from behind crossing a finish line at sunrise, arms raised, golden light and long shadows, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "「自分は頑張れていない」\nと思う人へ。",
+      "sub": "ある名選手が、引退会見で語った言葉。",
+      "narration": "自分は、頑張れていない。そう思う人へ。ある名選手が、引退会見で語った言葉。",
+      "bg": "a"
+    },
+    {
+      "type": "quote",
+      "main": "「人よりも頑張ったとは\nとても言えないですけど」",
+      "sub": "2019年3月、引退会見にて。",
+      "bg": "a"
+    },
+    {
+      "type": "quote",
+      "main": "「自分なりに頑張ってきたことは\nはっきりと言える」",
+      "sub": "― イチロー",
+      "bg": "b"
+    },
+    {
+      "type": "story",
+      "main": "自分の物差しで、\n限界を少しだけ超える。",
+      "sub": "一気に変わろうとすると、続かない。\nだから、少しずつ積み重ねてきた。\n（引退会見の言葉を要約）",
+      "bg": "c"
+    },
+    {
+      "type": "finale",
+      "main": "比べる相手は、\n他人じゃない。\n昨日の自分だ。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "人と比べて落ち込む日に。\n\nイチローは引退会見で、人より頑張ったとは言えないが、自分なりに頑張ってきたことははっきり言える、と語った。\n\n自分の中の基準で、限界をほんの少しだけ超える。\nそれを積み重ねることでしか、後悔は減らせない。\n\n今日のあなたは、昨日のあなたより一歩進めた？\n保存して、比べてしまう日に見返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #イチロー #積み重ね",
+  "threads_text": "イチローは引退会見で「人よりも頑張ったとはとても言えないですけど、自分なりに頑張ってきたことははっきりと言える」と語った。\n\n比べる相手は他人じゃない。昨日の自分だ。"
+}

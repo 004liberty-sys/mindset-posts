@@ -1,0 +1,51 @@
+{
+  "id": "003",
+  "person": "オプラ・ウィンフリー",
+  "voice": "female",
+  "theme": "挫折と天職",
+  "sources": [
+    "https://www.cnbc.com/2019/04/01/how-oprah-winfrey-found-her-calling.html"
+  ],
+  "backgrounds": {
+    "a": "an empty 1970s television news studio, anchor desk under a single spotlight, dark surroundings, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "a woman seen from behind walking down a dim television station hallway toward a lit doorway, 1970s, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "c": "warm stage lights glowing over an empty talk show set with two chairs, hopeful atmosphere, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a woman seen from behind walking through open doors into a bright sunlit hall full of warm golden light, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "「向いていない」と\n言われた日に、読んでほしい。",
+      "sub": "ある女性の、左遷の話。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "ニュースキャスターとして、\n否定される日々。",
+      "sub": "見た目も、感情が表に出すぎることも、\n「合わない」と言われた。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "そして、\nトーク番組へ回された。",
+      "sub": "1978年。\n実質的な降格だった。",
+      "bg": "b"
+    },
+    {
+      "type": "quote",
+      "main": "その初日、\n「これが自分の道だ」と感じた。",
+      "sub": "のちに世界的な司会者となる、\nオプラ・ウィンフリー。",
+      "bg": "c"
+    },
+    {
+      "type": "finale",
+      "main": "向いていない場所は、\n向いている場所への\n入り口かもしれない。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "否定された場所が、すべてじゃない。\n\nオプラ・ウィンフリーは、ニュースキャスター時代に「合わない」と言われ、トーク番組へ回された。\nでもその初日、彼女は「これが自分の道だ」と感じたという。\n\n左遷、異動、不合格。\nそれは「終わり」ではなく、「行き先の変更」かもしれない。\n\n今いる場所で否定されているあなたへ。\n保存して、しんどい日に読み返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #天職 #オプラウィンフリー",
+  "threads_text": "ニュースキャスター時代に「合わない」と言われ、トーク番組へ回されたオプラ・ウィンフリー。\nその初日に「これが自分の道だ」と感じたという。\n\n向いていない場所は、向いている場所への入り口かもしれない。"
+}

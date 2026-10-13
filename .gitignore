@@ -1,0 +1,14 @@
+# 鍵は絶対にGitHubに上げない
+secrets/
+*.key
+*token*.txt
+# 作業用・大きいファイル（公開用は docs/media にコピーされる）
+reels/
+output/
+backgrounds/
+images/
+__pycache__/
+*.zip
+# 公開しないもの
+BGM/
+*.xlsx

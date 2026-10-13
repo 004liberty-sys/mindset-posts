@@ -1,0 +1,49 @@
+{
+  "id": "001",
+  "person": "安藤百福",
+  "theme": "年齢と挑戦",
+  "sources": [
+    "https://www.nippon.com/ja/views/b07206/"
+  ],
+  "backgrounds": {
+    "a": "a small wooden backyard shed at night in 1950s Japan, single bare light bulb glowing through the window, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "close-up of the hands of a man in his late 40s working at a simple wooden workbench with a pot and noodles, 1950s Japan, warm bulb light, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a man seen from behind walking up a quiet Japanese street toward a brilliant sunrise, golden light flooding the road, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "「もう遅い」と\n思った日に、読んでほしい。",
+      "sub": "ある男の、48歳の話。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "47歳。\nすべてを失った。",
+      "sub": "理事長を務めた信用組合が破綻。\n残ったのは、住んでいた借家だけ。",
+      "bg": "a"
+    },
+    {
+      "type": "story",
+      "main": "裏庭の小さな小屋で、\nもう一度。",
+      "sub": "睡眠は1日4時間ほど。\n1年間、休まず研究を続けた。",
+      "bg": "b"
+    },
+    {
+      "type": "quote",
+      "main": "48歳。\n「チキンラーメン」誕生。",
+      "sub": "「人生に遅すぎることはない」\n― 安藤百福（日清食品 創業者）",
+      "bg": "b"
+    },
+    {
+      "type": "finale",
+      "main": "遅いかどうかを決めるのは、\n年齢じゃない。\n始めるかどうかだ。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "「もう遅い」は、本当に遅いのか。\n\n安藤百福は47歳で、信用組合の破綻によって住まい以外の財産をすべて失った。\nそこから裏庭の小さな小屋で1年間研究を続け、48歳でチキンラーメンを世に出した。\n\n年齢は、挑戦をやめる理由にはならない。\nやめる理由になるのは、自分で「もう遅い」と決めたときだけだ。\n\n今日、ひとつだけ始めてみよう。\n保存して、迷った日に読み返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #挑戦 #安藤百福",
+  "threads_text": "47歳で、ほぼすべての財産を失った男がいた。\n裏庭の小屋で1年間研究を続け、48歳でチキンラーメンを世に出した。安藤百福。\n\n「人生に遅すぎることはない」\n\n遅いかどうかを決めるのは年齢じゃない。始めるかどうかだ。"
+}

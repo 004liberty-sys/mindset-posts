@@ -1,0 +1,50 @@
+{
+  "id": "005",
+  "person": "稲盛和夫",
+  "theme": "考え方",
+  "sources": [
+    "https://president.jp/articles/-/112566"
+  ],
+  "backgrounds": {
+    "a": "a small 1950s Japanese factory workshop at night, a single desk lamp over a cluttered workbench, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b": "a man in a white shirt seen from behind standing at a large window overlooking a city at night, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "c": "a mountain path at sunrise, steep and rocky, light breaking over the ridge, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "d": "a climber seen from behind standing on a mountain summit at sunrise above a sea of clouds, cinematic photograph, bright hopeful golden-hour sunlight, warm uplifting colors, sense of moving forward into a bright future, vertical 4:5, soft open sky in the upper half for text, no visible faces, no text, no logos, no real identifiable people"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "「才能がない」と\nあきらめかけている人へ。",
+      "sub": "経営の神様が残した、ひとつの方程式。",
+      "bg": "a"
+    },
+    {
+      "type": "quote",
+      "main": "結果 ＝\n考え方 × 熱意 × 能力",
+      "sub": "― 稲盛和夫（京セラ 創業者）",
+      "bg": "b"
+    },
+    {
+      "type": "story",
+      "main": "熱意と能力は、\n0点から100点。",
+      "sub": "ここまでは、\n努力でいくらでも伸ばせる。",
+      "bg": "b"
+    },
+    {
+      "type": "story",
+      "main": "でも「考え方」だけは、\nマイナス100から\nプラス100まである。",
+      "sub": "考え方がマイナスなら、\n才能も熱意も、すべてマイナスに変わる。",
+      "bg": "c"
+    },
+    {
+      "type": "finale",
+      "main": "才能は選べない。\nでも、考え方と熱意は\n今日から選べる。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": "d"
+    }
+  ],
+  "caption": "才能がないことは、あきらめる理由にならない。\n\n稲盛和夫は、人生と仕事の結果は「考え方×熱意×能力」の掛け算で決まると考えた。\n熱意と能力は0〜100点。でも考え方だけは、マイナス100からプラス100まである。\n\nだから、才能が乏しくても熱意をもって努力する人が、才能に頼る人を超えていく。\n\nあなたの今の考え方は、プラス？マイナス？\n保存して、何度でも見返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #稲盛和夫 #考え方",
+  "threads_text": "稲盛和夫の方程式。\n結果＝考え方×熱意×能力\n\n熱意と能力は0〜100点。でも考え方だけはマイナス100からプラス100まである。\n\n才能は選べない。でも、考え方と熱意は今日から選べる。"
+}
