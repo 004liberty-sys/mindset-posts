@@ -1,0 +1,70 @@
+{
+  "id": "005v2",
+  "person": "稲盛和夫",
+  "theme": "考え方",
+  "sources": [
+    "https://president.jp/articles/-/112566"
+  ],
+  "backgrounds": {
+    "a2": "close-up of a pair of worn hands shaping a small white ceramic piece on a cluttered workbench in a 1950s Japanese factory at night, a single desk lamp, cinematic dark moody photograph, low-key lighting, film grain, muted colors, vertical 4:5, lots of empty dark space in the center for text, no visible faces, no text, no logos, no real identifiable people",
+    "b2": "1950s Japan, night. Close-up of the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, sitting at a wooden desk under a single lamp, writing in an open notebook with a pencil, intense focused expression, blank pages with no legible writing, dark sepia-toned muted colors, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures",
+    "b3": "Still life in a dim 1950s Japanese factory workshop: three smooth dark stones placed in a row on an old wooden workbench, a single narrow beam of warm light falling from above, tools faintly visible in the shadows, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, dark sepia-toned muted colors, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no people, no text, no letters, no logos, no signatures",
+    "c2": "Dramatic close-up portrait of the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, his face split by light and shadow, half in darkness and half lit by warm dawn light, eyes firm and determined, dark sepia-toned muted colors, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures",
+    "d2": "the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, walking forward up a mountain ridge toward the rising sun, glancing back over his shoulder with a hopeful smile, golden light flooding over the clouds, warm bright golden sunrise colors, hopeful and uplifting (not dark), soft open sky in the upper half for text, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures",
+    "test1": "A small Japanese town factory workshop in the 1950s. An original fictional craftsman character in work clothes (not resembling any real person) stands in front of a machine with a stern, determined expression; his face is clearly visible. Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, dark sepia-toned muted colors, vertical 4:5 composition, keep empty space from the center to the bottom for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures.",
+    "b": "1950s Japan, night. the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, standing at the window of a small factory office looking out over the dark town, calm and thoughtful expression, face clearly visible in three-quarter view, lit by a single desk lamp, dark sepia-toned muted colors, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures",
+    "c": "A steep rocky mountain path at dawn that splits in two, one way sinking into deep shadow and the other rising toward faint light on the ridge. the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, standing at the fork, looking toward the light with a serious, resolved expression, face visible, dark sepia-toned muted colors, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures",
+    "d": "the same original fictional Japanese craftsman character in every image (not resembling any real person): early 30s, short messy black hair swept back, strong jaw, light stubble, lean muscular build, grey-brown work clothes with sleeves rolled up, white towel around his neck, standing on a mountain summit above a sea of clouds at sunrise, chest out, a quiet confident smile, face visible, golden sunlight on him, warm bright golden sunrise colors, hopeful and uplifting (not dark), soft open sky in the upper half for text, Gekiga / Japanese dramatic manga-style illustration, strong bold line art, dramatic chiaroscuro shading, vertical 4:5 composition, keep the center relatively plain for text overlay, illustration not a photograph, no text, no letters, no logos, no signatures"
+  },
+  "slides": [
+    {
+      "type": "hook",
+      "main": "なぜ、才能がない人ほど\n成功するのか。",
+      "bg": [
+        "test1"
+      ]
+    },
+    {
+      "type": "story",
+      "main": "経営の神様と呼ばれた男は、\nひとつの方程式だけを信じていた。",
+      "bg": [
+        "b",
+        "b2"
+      ]
+    },
+    {
+      "type": "law",
+      "main": "人生の方程式"
+    },
+    {
+      "type": "quote",
+      "main": "結果 ＝\n考え方 × 熱意 × 能力",
+      "sub": "― 稲盛和夫（京セラ 創業者）",
+      "bg": [
+        "b3"
+      ]
+    },
+    {
+      "type": "story",
+      "main": "でも「考え方」だけは、\nマイナス100から\nプラス100まである。",
+      "sub": "考え方がマイナスなら、\n才能も熱意も、すべてマイナスに変わる。",
+      "bg": [
+        "c",
+        "c2"
+      ]
+    },
+    {
+      "type": "finale",
+      "main": "才能は選べない。\nでも、考え方と熱意は\n今日から選べる。",
+      "sub": "逆風に立ち向かう、強い自分へ",
+      "foot": "言い訳も、弱さも、ここに置いていけ。\n本気で変わりたい人はフォローを。",
+      "bg": [
+        "d2",
+        "d"
+      ]
+    }
+  ],
+  "caption": "才能がないことは、あきらめる理由にならない。\n\n稲盛和夫は、人生と仕事の結果は「考え方×熱意×能力」の掛け算で決まると考えた。\n熱意と能力は0〜100点。でも考え方だけは、マイナス100からプラス100まである。\n\nだから、才能が乏しくても熱意をもって努力する人が、才能に頼る人を超えていく。\n\nあなたの今の考え方は、プラス？マイナス？\n保存して、何度でも見返してほしい。",
+  "hashtags": "#マインドセット #自己成長 #目標達成 #モチベーション #偉人の言葉 #稲盛和夫 #考え方",
+  "threads_text": "稲盛和夫の方程式。\n結果＝考え方×熱意×能力\n\n熱意と能力は0〜100点。でも考え方だけはマイナス100からプラス100まである。\n\n才能は選べない。でも、考え方と熱意は今日から選べる。"
+}

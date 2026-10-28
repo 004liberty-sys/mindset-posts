@@ -14,6 +14,8 @@ APIキーは環境変数ではなく secrets/openai_key.txt に1行で保存す�
 （環境変数 OPENAI_API_KEY に入れると、Codexの画像生成までAPI課金に切り替わるため）
 各スライドに "narration": "..." を書くと、その文を優先して読み上げる。
 readings.json に「漢字: よみがな」を書いておくと、読み上げ原稿の中だけ置き換える（画像の文字はそのまま）。
+スライドの "bg" が ["a", "a2"] のような配列なら、そのスライドの読み上げ時間を枚数で等分し、
+写真をハードカット（つなぎなし）で順に切り替える。スライド同士のつなぎは今まで通りクロスフェード。
 """
 import json
 import math
@@ -63,7 +65,9 @@ def reel_footer(img_draw, idx, total):
 
 
 def render_vertical_slides(spec, workdir):
-    """make_carousel の描画をそのまま使い、サイズだけ縦長（1080x1920）にして描く。"""
+    """make_carousel の描画をそのまま使い、サイズだけ縦長（1080x1920）にして描く。
+    スライドごとに画像のリストを返す（"bg" が配列なら写真の枚数ぶん描く）。"""
+    from PIL import ImageDraw
     mc.W, mc.H = 1080, 1920
     original_footer = mc.draw_footer
     mc.draw_footer = lambda *a, **k: None
@@ -71,12 +75,15 @@ def render_vertical_slides(spec, workdir):
     try:
         slides = spec["slides"]
         for i, s in enumerate(slides, 1):
-            img = mc.render(s, i, len(slides), seed=f"{spec['id']}-{i}")
-            from PIL import ImageDraw
-            reel_footer(ImageDraw.Draw(img), i, len(slides))
-            p = workdir / f"v{i:02d}.png"
-            img.save(p)
-            paths.append(p)
+            keys = ([None] if s["type"] == "law" else mc.bg_keys(s)) or [None]
+            group = []
+            for j, key in enumerate(keys, 1):
+                img = mc.render(s, i, len(slides), seed=f"{spec['id']}-{i}", bg_key=key)
+                reel_footer(ImageDraw.Draw(img), i, len(slides))
+                p = workdir / f"v{i:02d}_{j}.png"
+                img.save(p)
+                group.append(p)
+            paths.append(group)
     finally:
         mc.draw_footer = original_footer
         mc.W, mc.H = 1080, 1350
@@ -183,13 +190,15 @@ def ffmpeg_exe():
 
 
 def build_video(images, audios, secs, out_path, tempo):
+    """images はスライドごとの画像リスト。"""
     n = len(images)
     secs = [s / tempo for s in secs]
     durs = [s + (END_PAD if i == n - 1 else PAD) for i, s in enumerate(secs)]
     lens = [d + (FADE if i < n - 1 else 0) for i, d in enumerate(durs)]
 
     cmd = [ffmpeg_exe(), "-y", "-loglevel", "error"]
-    for p in images:
+    flat = [p for group in images for p in group]
+    for p in flat:
         cmd += ["-i", str(p)]
     for p in audios:
         cmd += ["-i", str(p)]
@@ -198,23 +207,32 @@ def build_video(images, audios, secs, out_path, tempo):
         cmd += ["-stream_loop", "-1", "-i", str(bgm)]    # 動画より短ければ繰り返す
 
     f = []
+    k = 0    # 入力画像の通し番号
     for i, L in enumerate(lens):
-        frames = math.ceil(L * FPS)
-        zoom = "min(zoom+0.0004,1.08)" if i % 2 == 0 else "if(eq(on,0),1.08,max(zoom-0.0004,1.0))"
-        f.append(f"[{i}:v]scale=2160:3840,zoompan=z='{zoom}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-                 f":d={frames}:s=1080x1920:fps={FPS},setsar=1,format=yuv420p[v{i}]")
+        m = len(images[i])
+        # 読み上げ時間を写真の枚数で等分。最後の1枚は、読み終わりの間とつなぎの分も受け持つ
+        cuts = [secs[i] * j / m for j in range(m)] + [L]
+        for j in range(m):
+            frames = math.ceil((cuts[j + 1] - cuts[j]) * FPS)
+            out = f"v{i}" if m == 1 else f"v{i}_{j}"
+            # 画像は動かさず、静止したまま必要なフレーム数だけ表示する
+            f.append(f"[{k}:v]scale=1080:1920,setsar=1,format=yuv420p,loop=loop={frames - 1}:size=1:start=0,"
+                     f"settb=1/{FPS},setpts=N,fps={FPS}[{out}]")
+            k += 1
+        if m > 1:
+            f.append("".join(f"[v{i}_{j}]" for j in range(m)) + f"concat=n={m}:v=1:a=0,settb=1/{FPS}[v{i}]")
     prev, offset = "v0", 0.0
     for i in range(1, n):
         offset += durs[i - 1]
         f.append(f"[{prev}][v{i}]xfade=transition=fade:duration={FADE}:offset={offset:.3f}[x{i}]")
         prev = f"x{i}"
     for i, d in enumerate(durs):
-        f.append(f"[{n + i}:a]atempo={tempo},apad=whole_dur={d:.3f}[a{i}]")
+        f.append(f"[{len(flat) + i}:a]atempo={tempo},apad=whole_dur={d:.3f}[a{i}]")
     total = sum(durs)
     voice_out = "voice" if bgm else "aout"
     f.append("".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1[{voice_out}]")
     if bgm:
-        f.append(f"[{2 * n}:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,volume={BGM_VOLUME},"
+        f.append(f"[{len(flat) + n}:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,volume={BGM_VOLUME},"
                  f"afade=t=in:d={BGM_FADE_IN},afade=t=out:st={total - BGM_FADE_OUT:.3f}:d={BGM_FADE_OUT},"
                  f"aformat=sample_rates=48000:channel_layouts=stereo[bgm]")
         f.append("[voice]aformat=sample_rates=48000:channel_layouts=stereo[voice2]")

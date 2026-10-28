@@ -6,9 +6,13 @@
 
 各スライドの "bg"（a / b / c）に対応する backgrounds/<投稿ID>_<a|b|c>.png があれば、
 その画像を暗くして背景に使う。なければ、暗いグラデーションの背景を自動で作る。
+"bg" は ["a", "a2"] のような配列でもよい（カルーセルでは最初の1枚を使う。リールでは順に切り替える）。
+投稿IDが "005v2" のような派生版で、backgrounds/005v2_a.png がなければ backgrounds/005_a.png を使う。
+"type": "law" は写真を使わず、真っ黒な背景に大きな太字だけを中央に出す。
 """
 import json
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -35,6 +39,7 @@ STYLE = {
     "message": dict(main=56, sub=34, glow=None),       # 黒地に文字だけ
     "cta":     dict(main=76, sub=30, glow=(40, 70, 140)),
     "finale":  dict(main=56, sub=40, glow=(40, 70, 140)),  # パンチライン＋合言葉
+    "law":     dict(main=64, sub=0, glow=None),        # 真っ黒な背景に太字だけ
 }
 TEXT = (238, 236, 232)
 SUB = (200, 196, 188)
@@ -105,11 +110,38 @@ def fit(d, text, kind, size, max_w=W - 160):
     return font(kind, size)
 
 
-def render(slide, idx, total, seed):
+def bg_keys(slide):
+    """スライドの "bg" を配列にそろえる（"a" → ["a"]、なし → []）。"""
+    bg = slide.get("bg") or []
+    return [bg] if isinstance(bg, str) else list(bg)
+
+
+def bg_path(post_id, key):
+    """backgrounds/<投稿ID>_<key>.png。派生版（005v2）でなければ元の投稿（005）の画像を探す。"""
+    for pid in (post_id, re.match(r"\d*", post_id).group()):
+        p = BG_DIR / f"{pid}_{key}.png"
+        if pid and p.exists():
+            return p
+    return None
+
+
+def render(slide, idx, total, seed, bg_key=None):
+    """bg_key を渡すと、その背景で描く（リールで1枚のスライドに複数の写真を使うとき）。"""
     st = STYLE[slide["type"]]
-    bg_file = BG_DIR / f"{seed.split('-')[0]}_{slide.get('bg', '')}.png"
+    if slide["type"] == "law":
+        img = Image.new("RGB", (W, H), (0, 0, 0))
+        d = ImageDraw.Draw(img)
+        fm = fit(d, slide["main"], "serif_bold", st["main"])
+        mh = int(fm.size * 1.6) * len(slide["main"].split("\n"))
+        draw_center(d, slide["main"], fm, (H - mh) // 2 - 20, TEXT)
+        draw_footer(img, idx, total)
+        return img
+
+    keys = bg_keys(slide)
+    key = bg_key or (keys[0] if keys else None)
+    bg_file = bg_path(seed.split("-")[0], key) if key else None
     img = (photo_background(bg_file, bright=slide["type"] == "finale")
-           if slide.get("bg") and bg_file.exists() else background(st["glow"], seed))
+           if bg_file else background(st["glow"], seed))
     d = ImageDraw.Draw(img)
 
     if slide["type"] == "finale":
